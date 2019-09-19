@@ -40,7 +40,7 @@ app.post("/signin", userControler.login);
 app.post("/markVoteOnPool", userControler.markVoteOnPool);
 
 //TODO: PRoveriti da li ovde treba /
-app.get('/', (req,res) =>{
+app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/pooly/build/index.html'));
 });
 
@@ -51,6 +51,7 @@ app.get("/activePool", poolControler.getActivePool);
 app.post("/increment", poolControler.IncermentAnswer);
 app.post("/new", poolControler.createNewPool);
 app.post("/deactivate/:id", poolControler.Deactivate);
+
 
 
 const port = process.env.PORT || 5000;
