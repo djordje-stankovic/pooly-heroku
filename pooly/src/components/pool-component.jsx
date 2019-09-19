@@ -19,7 +19,7 @@ class Pool extends Component {
      }
      
      async componentDidMount (){
-        const {data : pool } = await axios.get("http://localhost:5000/activePool" );
+        const {data : pool } = await axios.get("/activePool" );
         let jwt = localStorage.getItem('jwt');
         let votedPools = [...this.state.votedPools];        
         let votedPool =  localStorage.getItem('votedPools');
@@ -56,7 +56,7 @@ class Pool extends Component {
         Object.keys(votes).forEach(async function(key) {
             console.log(key, votes[key]);
             let oneVote = {questionId : parseInt(key), answerId : parseInt(votes[key]) }
-            const {data} = await axios.post("http://localhost:5000/increment", oneVote);
+            const {data} = await axios.post("/increment", oneVote);
         });
         let poolId = this.state.poolId;
         let votedPools = [...this.state.votedPools];
@@ -84,7 +84,7 @@ class Pool extends Component {
     deactivatingPool = async() =>{
         let id = this.state.pool.data.pool._id
         let deactivate = { active : false};
-        const {data} = await axios.post("http://localhost:5000/deactivate" + "/" + id, deactivate);
+        const {data} = await axios.post("/deactivate" + "/" + id, deactivate);
         let pool = {data:{pool: null}}
         this.setState({pool});
     }
