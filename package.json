@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd server_express && npm start",
-    "client": "cd pooly && npm start",
+    "start": "cd server_express && npm start",
+    "_comment_client": "cd pooly && npm start",
     "_comment_dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm install --prefix pooly && npm run build -- prefix pooly"
   },
