@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "web" : "cd server_express && npm start",
     "start": "cd server_express && npm start",
     "_comment_client": "cd pooly && npm start",
     "_comment_dev": "concurrently \"npm run server\" \"npm run client\"",
