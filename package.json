@@ -8,7 +8,7 @@
     "server": "cd server_express && npm start",
     "client": "cd pooly && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm install --prefix pooly && npm run build -- prefix pooly"
+    "heroku-postbuild": "npm install --prefix pooly && npm run build -- prefix pooly && npm run dev"
   },
   "author": "",
   "license": "ISC",
