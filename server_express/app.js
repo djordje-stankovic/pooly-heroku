@@ -53,7 +53,7 @@ app.post("/new", poolControler.createNewPool);
 app.post("/deactivate/:id", poolControler.Deactivate);
 
 
-
-app.listen(5000, () => {
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
     console.log(`App runing on port 5000 from app`);
 });
