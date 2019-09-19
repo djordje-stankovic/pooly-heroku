@@ -1,14 +1,15 @@
-const expres = require('express');
+const express = require('express');
 const morgan = require('morgan');
 // const Answer = require('./models/answer');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userControler = require('./controllers/userControler');
 const poolControler = require('./controllers/poolControler');
-const app = expres();
+const app = express();
 
 app.use(morgan('dev'));
-app.use(expres.json());
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'pooly/build')));
 
 //Cors
 app.use(function(req, res, next) {
@@ -35,6 +36,11 @@ const DB = ` mongodb+srv://Djordje:kcP6FtaoVC5J2b0b@cluster0-i1knv.mongodb.net/p
 // app.post("/signup", userControler.signup);
 app.post("/signin", userControler.login);
 app.post("/markVoteOnPool", userControler.markVoteOnPool);
+
+//TODO: PRoveriti da li ovde treba /
+app.get('/', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/pooly/build/index.html'));
+});
 
 //Pool routes
 app.post("/pool", poolControler.createNewPool);
