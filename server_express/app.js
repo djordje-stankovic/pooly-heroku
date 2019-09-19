@@ -40,7 +40,7 @@ app.post("/signin", userControler.login);
 app.post("/markVoteOnPool", userControler.markVoteOnPool);
 
 //TODO: PRoveriti da li ovde treba /
-app.get('*', (req,res) =>{
+app.get('/', (req,res) =>{
   res.sendFile(path.join(__dirname, '../pooly/build/index.html'));
 });
 
