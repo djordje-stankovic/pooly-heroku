@@ -17,7 +17,7 @@ class Login extends Component {
         this.setState({ [e.target.name]: e.target.value})
     }
      getToken = async user => {
-        const {data} = await axios.post("http://localhost:5000/signin", user).then(res => {
+        const {data} = await axios.post("/signin", user).then(res => {
             return data;
         }).catch(error => {
             return error;
@@ -28,7 +28,7 @@ class Login extends Component {
             password : this.state.pas,
             email : this.state.email
         }
-        let {data} = await axios.post("http://localhost:5000/signin", user).catch( eror =>{
+        let {data} = await axios.post("/signin", user).catch( eror =>{
             return "eroor"
         })
         if(data) {

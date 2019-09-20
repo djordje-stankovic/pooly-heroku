@@ -16,7 +16,7 @@ class SingUp extends Component {
              password : password
             }
             console.log(this.state)
-        const {data} = await axios.post("http://localhost:5000/signup", obj);
+        const {data} = await axios.post("/signup", obj);
         console.log(data)
         if(data.status = "False"){
             let alredyTaken = false;

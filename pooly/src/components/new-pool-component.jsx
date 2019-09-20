@@ -24,7 +24,7 @@ class NewPool extends Component {
      //Savin all data in dataBase 
       savePool = async () => {
        let pool = this.state.pool;
-       const { data } = await axios.post("http://localhost:5000/new", pool );
+       const { data } = await axios.post("/new", pool );
        console.log(data);
        this.props.history.push("/");
 
