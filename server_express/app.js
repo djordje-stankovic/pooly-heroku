@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-// const Answer = require('./models/answer');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userControler = require('./controllers/userControler');
@@ -39,7 +38,7 @@ const DB = ` mongodb+srv://Djordje:kcP6FtaoVC5J2b0b@cluster0-i1knv.mongodb.net/p
 app.post("/signin", userControler.login);
 app.post("/markVoteOnPool", userControler.markVoteOnPool);
 
-//TODO: PRoveriti da li ovde treba /
+//Lets Heroku after build to get index.html /
 app.get('/', (req,res) =>{
   res.sendFile(path.join(__dirname, '../pooly/build/index.html'));
 });
@@ -56,5 +55,5 @@ app.post("/deactivate/:id", poolControler.Deactivate);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-    console.log(`App runing on port 5000 from app`);
+    console.log(`App runing on port${port} from app`);
 });
