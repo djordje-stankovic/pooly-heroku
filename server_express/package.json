@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "server": "nodemon server.js"    
   },
   "author": "",
@@ -22,5 +22,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
-  }
+  },
+  "Proxy" : " http://localhost:5000/"
 }

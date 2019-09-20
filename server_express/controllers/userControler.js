@@ -44,7 +44,8 @@ exports.login = async (req, res, next) => {
         return next("Please provide email and password")
     }
     const user = await User.findOne({email}).select('+password')
-    if(!user){
+    console.log(user)
+    if(user.password !== password || user.email !== email){
         return next("Incorect password or email")
     }
     const token = singIn(user._id);
