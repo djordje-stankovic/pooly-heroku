@@ -22,3 +22,4 @@ react-chartjs-2
 
 ## Demo
 For a quick look applications go to https://pooly.herokuapp.com/
+For Login use Admin123 Admin123
